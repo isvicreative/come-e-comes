@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Come e Comes Campo Bom</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="Logo Come e Comes" class="logo" />
+    <h1>Come e Comes Campo Bom</h1>
+    <p>O sabor que conquista Campo Bom!</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#pedido">Seu Pedido</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="cardapio-pedido">
+      <section id="cardapio">
+        <h2>Cardápio</h2>
+        <div class="grid-cardapio">
+
+          <div class="item">
+            <h3>Burguer</h3>
+            <p>Pão, carne, queijo, molho especial</p>
+            <span>R$ 15,00</span>
+            <button onclick="adicionarItem('Burguer - R$ 15,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Burguer com Fritas</h3>
+            <p>Combo com batata frita crocante</p>
+            <span>R$ 22,00</span>
+            <button onclick="adicionarItem('Burguer com Fritas - R$ 22,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Xis Salada</h3>
+            <p>Carne, queijo, alface, tomate, maionese</p>
+            <span>R$ 18,00</span>
+            <button onclick="adicionarItem('Xis Salada - R$ 18,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Xis Bacon</h3>
+            <p>Xis salada com bacon crocante</p>
+            <span>R$ 20,00</span>
+            <button onclick="adicionarItem('Xis Bacon - R$ 20,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Xis Tudo</h3>
+            <p>Carne, queijo, presunto, bacon, ovo, salada</p>
+            <span>R$ 25,00</span>
+            <button onclick="adicionarItem('Xis Tudo - R$ 25,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Cachorro Quente</h3>
+            <p>Pão, salsicha, milho, ervilha, batata palha, molho especial</p>
+            <span>R$ 12,00</span>
+            <button onclick="adicionarItem('Cachorro Quente - R$ 12,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Refrigerante Coca Lata</h3>
+            <p>350ml gelada</p>
+            <span>R$ 5,00</span>
+            <button onclick="adicionarItem('Coca Lata - R$ 5,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Refrigerante Coca 600ml</h3>
+            <p>Garrafa 600ml</p>
+            <span>R$ 7,00</span>
+            <button onclick="adicionarItem('Coca 600ml - R$ 7,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Guaraná Lata</h3>
+            <p>350ml gelada</p>
+            <span>R$ 5,00</span>
+            <button onclick="adicionarItem('Guaraná Lata - R$ 5,00')">Adicionar</button>
+          </div>
+
+          <div class="item">
+            <h3>Guaraná 600ml</h3>
+            <p>Garrafa 600ml</p>
+            <span>R$ 7,00</span>
+            <button onclick="adicionarItem('Guaraná 600ml - R$ 7,00')">Adicionar</button>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="pedido">
+        <h2>Seu Pedido</h2>
+        <ul id="lista-pedido"></ul>
+        <p id="total-pedido" style="font-weight: bold;">Total: R$ 0,00</p>
+        <button onclick="enviarPedido()">Finalizar Pedido via WhatsApp</button>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>📍 Rua Exemplo, 123 – Campo Bom, RS</p>
+    <p>📞 (51) 99999-9999</p>
+    <p>🕒 Seg a Sáb – 18h às 23h</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
