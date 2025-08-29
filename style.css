@@ -1,3 +1,4 @@
+/* Reset e base */
 * {
   box-sizing: border-box;
 }
@@ -85,6 +86,11 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   height: 170px;
+  transition: box-shadow 0.3s ease;
+}
+
+.item:hover {
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
 }
 
 .item h3 {
@@ -106,7 +112,7 @@ h2 {
   color: #d84315;
 }
 
-.item button {
+.item button.btn-adicionar {
   background-color: #ff5722;
   border: none;
   color: white;
@@ -117,45 +123,152 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.item button:hover {
+.item button.btn-adicionar:hover {
   background-color: #e64a19;
 }
 
+/* Pedido */
+
 #pedido ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none;
+  padding-left: 0;
   min-height: 60px;
 }
 
-#pedido button {
+#pedido li {
+  position: relative;
+  padding: 10px 100px 10px 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  color: #444;
+  white-space: normal;
+}
+
+#pedido li:last-child {
+  border-bottom: none;
+}
+
+#pedido li button.remover {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #e53935;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+#pedido li button.remover:hover {
+  background-color: #b71c1c;
+}
+
+#pedido li span.quantidade {
+  background: #ff7043;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+#pedido li span.removidos {
+  display: block;
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #b71c1c;
+  font-style: italic;
+}
+
+#total-pedido {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #bf360c;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#finalizar-pedido {
   background-color: #ff5722;
   color: white;
   border: none;
   width: 100%;
-  padding: 12px;
+  padding: 15px;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  margin-top: 20px;
   transition: background-color 0.3s ease;
-  margin-top: 15px;
 }
 
-#pedido button:hover {
+#finalizar-pedido:hover {
   background-color: #e64a19;
 }
 
-footer {
-  text-align: center;
-  background-color: #ff5722;
-  color: white;
-  padding: 15px;
-  margin-top: 40px;
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
 }
 
-@media (max-width: 768px) {
-  #cardapio-pedido {
-    flex-direction: column;
-    padding: 15px;
-  }
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #ff5722;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#btn-cancelar {
+  background-color: #bdbdbd;
+  color: #333;
+}
+
+#btn-cancelar:hover {
+  background-color: #9e9e9e;
+}
+
+#btn-confirmar {
+  background-color: #ff5722;
+  color: white;
+}
+
+#btn-confirmar:hover {
+  background-color: #e64a19;
 }

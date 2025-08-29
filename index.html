@@ -26,74 +26,74 @@
         <h2>Cardápio</h2>
         <div class="grid-cardapio">
 
-          <div class="item">
+          <div class="item" data-preco="15.00" data-nome="Burguer" data-ingredientes="Pão, carne, queijo, molho especial">
             <h3>Burguer</h3>
             <p>Pão, carne, queijo, molho especial</p>
             <span>R$ 15,00</span>
-            <button onclick="adicionarItem('Burguer - R$ 15,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="22.00" data-nome="Burguer com Fritas" data-ingredientes="Pão, carne, queijo, molho especial, batata frita">
             <h3>Burguer com Fritas</h3>
             <p>Combo com batata frita crocante</p>
             <span>R$ 22,00</span>
-            <button onclick="adicionarItem('Burguer com Fritas - R$ 22,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="18.00" data-nome="Xis Salada" data-ingredientes="Carne, queijo, alface, tomate, maionese">
             <h3>Xis Salada</h3>
             <p>Carne, queijo, alface, tomate, maionese</p>
             <span>R$ 18,00</span>
-            <button onclick="adicionarItem('Xis Salada - R$ 18,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="20.00" data-nome="Xis Bacon" data-ingredientes="Carne, queijo, alface, tomate, maionese, bacon crocante">
             <h3>Xis Bacon</h3>
             <p>Xis salada com bacon crocante</p>
             <span>R$ 20,00</span>
-            <button onclick="adicionarItem('Xis Bacon - R$ 20,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="25.00" data-nome="Xis Tudo" data-ingredientes="Carne, queijo, presunto, bacon, ovo, salada">
             <h3>Xis Tudo</h3>
             <p>Carne, queijo, presunto, bacon, ovo, salada</p>
             <span>R$ 25,00</span>
-            <button onclick="adicionarItem('Xis Tudo - R$ 25,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="12.00" data-nome="Cachorro Quente" data-ingredientes="Pão, salsicha, milho, ervilha, batata palha, molho especial">
             <h3>Cachorro Quente</h3>
             <p>Pão, salsicha, milho, ervilha, batata palha, molho especial</p>
             <span>R$ 12,00</span>
-            <button onclick="adicionarItem('Cachorro Quente - R$ 12,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="5.00" data-nome="Refrigerante Coca Lata" data-ingredientes="Refrigerante Coca 350ml gelada">
             <h3>Refrigerante Coca Lata</h3>
             <p>350ml gelada</p>
             <span>R$ 5,00</span>
-            <button onclick="adicionarItem('Coca Lata - R$ 5,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="7.00" data-nome="Refrigerante Coca 600ml" data-ingredientes="Refrigerante Coca 600ml">
             <h3>Refrigerante Coca 600ml</h3>
             <p>Garrafa 600ml</p>
             <span>R$ 7,00</span>
-            <button onclick="adicionarItem('Coca 600ml - R$ 7,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="5.00" data-nome="Guaraná Lata" data-ingredientes="Guaraná 350ml gelado">
             <h3>Guaraná Lata</h3>
             <p>350ml gelada</p>
             <span>R$ 5,00</span>
-            <button onclick="adicionarItem('Guaraná Lata - R$ 5,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
-          <div class="item">
+          <div class="item" data-preco="7.00" data-nome="Guaraná 600ml" data-ingredientes="Guaraná 600ml">
             <h3>Guaraná 600ml</h3>
             <p>Garrafa 600ml</p>
             <span>R$ 7,00</span>
-            <button onclick="adicionarItem('Guaraná 600ml - R$ 7,00')">Adicionar</button>
+            <button class="btn-adicionar">Adicionar</button>
           </div>
 
         </div>
@@ -103,10 +103,23 @@
         <h2>Seu Pedido</h2>
         <ul id="lista-pedido"></ul>
         <p id="total-pedido" style="font-weight: bold;">Total: R$ 0,00</p>
-        <button onclick="enviarPedido()">Finalizar Pedido via WhatsApp</button>
+        <button id="finalizar-pedido">Finalizar Pedido via WhatsApp</button>
       </section>
     </section>
   </main>
+
+  <!-- Modal para remover ingredientes -->
+  <div id="modal-ingredientes" class="modal">
+    <div class="modal-content">
+      <h3>Personalize seu pedido</h3>
+      <p>Remova os ingredientes que você não quer:</p>
+      <form id="form-ingredientes"></form>
+      <div class="modal-buttons">
+        <button id="btn-cancelar">Cancelar</button>
+        <button id="btn-confirmar">Confirmar</button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>📍 Rua Exemplo, 123 – Campo Bom, RS</p>
@@ -117,3 +130,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
